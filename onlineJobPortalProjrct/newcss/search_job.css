@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright gradient background */
+    min-height: 100vh;
+}
+
+/* Search Section */
+.search-container {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque for contrast */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Increased shadow for depth */
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 6rem;
+    z-index: 100;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* More visible border */
+}
+
+.search-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 30px 0 0 30px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9); /* Brighter background */
+    color: #333; /* Darker text for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Darker placeholder for better visibility */
+}
+
+.search-input:focus {
+    outline: none;
+    background: #fff; /* White background on focus */
+    color: #000; /* Black text on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on focus */
+}
+
+.search-button {
+    padding: 0 1.5rem;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Vibrant button gradient */
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Main Content */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 6rem;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff; /* White text for better visibility */
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Job Card */
+.job-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.job-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.job-header h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* status section */
+.status-badge {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 30px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 2px 2px rgba(255, 255, 255, 0.1);
+  animation: mirror-pulse 2.5s ease-in-out infinite alternate;
+}
+
+/* Primary Crystal Shine (Fast Moving) */
+.status-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: crystal-shine 3s linear infinite;
+}
+
+/* Secondary Glow (Slow Moving) */
+.status-badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(20deg);
+  animation: crystal-shine-secondary 5s linear infinite;
+  animation-delay: 1s;
+}
+
+.status-open {
+  background: linear-gradient(135deg, #28a745, #1e7e34, #28a745);
+}
+
+.status-closed {
+  background: linear-gradient(135deg, #dc3545, #a71d2a, #dc3545);
+}
+
+/* Mirror Pulse Animation */
+@keyframes mirror-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Primary Shine Animation */
+@keyframes crystal-shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Secondary Shine Animation (Slower) */
+@keyframes crystal-shine-secondary {
+  0% { transform: translateX(-100%) rotate(20deg); }
+  100% { transform: translateX(100%) rotate(20deg); }
+}
+
+/* Inner Glow Effect */
+.status-badge:hover {
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Job Type and Work Location Badges */
+.job-type-badge,
+.work-location-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white; /* White text for better contrast */
+    font-weight: 600;
+    display: inline-block; /* Ensures the badges are inline */
+    text-align: center; /* Center the text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Gradient for Job Type */
+.job-type-badge {
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Vibrant gradient for job type */
+}
+
+/* Gradient for Work Location */
+.work-location-badge {
+    background: linear-gradient(135deg, #ff6f91, #8e44ad, #3498db); /* Pink to Purple to Blue gradient */
+}
+
+/* Additional styles for job detail */
+.job-detail {
+    margin-bottom: 1.8rem;
+    display: grid;
+    grid-template-columns: minmax(220px, auto) 1fr;
+    gap: 1.5rem;
+}
+
+.job-detail strong {
+    color: #34495e;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.95rem;
+}
+
+.job-detail strong i {
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.job-detail p {
+    color: #5a6c7d;
+    margin: 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+}
+
+
+/* Button styles */
+.job-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Apply Button */
+.btn-apply {
+    background: linear-gradient(90deg, rgba(180, 58, 154, 1), rgba(253, 29, 29, 1), rgba(252, 170, 69, 1));
+    background-size: 200% 100%; /* Double the width for animation */
+    background-position: 0% 50%; /* Start from left */
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease, background-position 0.5s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: 180px;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-apply:hover {
+    background-position: 100% 50%; /* Animate gradient to right */
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(253, 29, 29, 0.3);
+}
+
+/* NO JOB FOUND*/
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.empty-state h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+
+    .search-wrapper {
+        padding: 0 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .job-card {
+        padding: 1.8rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .job-detail {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0;
+    }
+
+    .main-container {
+        padding: 0.5rem;
+    }
+
+    .job-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .job-detail p {
+        padding: 0.8rem 1rem;
+    }
+
+    .btn {
+        min-width: 100%;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
