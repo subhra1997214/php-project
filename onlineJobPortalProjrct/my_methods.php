@@ -12,15 +12,10 @@
 
 
     function connect() {
-        // $hostName = "localhost";
-        // $userName = "root";
-        // $userPassword = "";
-        // $dbName = "jobportal";
-
-        $hostName = "sql200.infinityfree.com";
-        $userName = "if0_39543174";
-        $userPassword = "Su9647904531";
-        $dbName = "if0_39543174_onlinejobportal";
+        $hostName = "localhost";
+        $userName = "root";
+        $userPassword = "";
+        $dbName = "jobportal";
 
         $conn = mysqli_connect($hostName, $userName, $userPassword, $dbName);
 
