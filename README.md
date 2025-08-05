@@ -3,6 +3,7 @@ This PHP-based Job Portal is a web application that allows job seekers to apply 
 employers to post job vacancies. It features role-based login systems, job listings, user registration,
 resume uploads, and search filters.
 <br><br>
+<br><br>
 **Features:** <br>
 - Job Seeker and Employer login/register system.
 - Post and manage job listings (for Employers).
@@ -11,6 +12,9 @@ resume uploads, and search filters.
 - Resume upload and download feature.
 - Search and filter jobs by job title.
 <br><br>
+<br><br>
 **Technologies Used:** <br>
 PHP, MySQL, HTML, CSS
-
+<br><br>
+<br><br>
+![Screenshot 2025-08-05 113620](https://github.com/user-attachments/assets/ffb97e2b-b094-4b50-9eee-07743e6c86da)
